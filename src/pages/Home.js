@@ -4,7 +4,6 @@ import Tasks from '../components/Tasks'
 import Illustration from '../components/Illustration'
 
 const Home = () => {
-    console.log("Home Rendered");
     return ( 
         <div className="home">
             <Search/>

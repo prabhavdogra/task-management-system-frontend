@@ -1,9 +1,13 @@
 import '../styles/tasks.scss'
 
 const TaskTile = (props) => {
-
-    // Add character limits in content
-    // {taskInfo={{date: "1 Nov 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}}
+    let x = props.taskInfo.heading;
+    const trim = (text) => {
+        if(text.toString().length > 20)
+            return x.toString().substr(0, 20) + "...";
+        else
+            return text;
+    }
     return ( 
         <div className="task-tile">
             <div className="tile-container">
@@ -11,10 +15,10 @@ const TaskTile = (props) => {
                     {props.taskInfo.date}
                 </div>
                 <div className="heading">
-                    {props.taskInfo.heading}
+                    {trim(props.taskInfo.heading)}
                 </div>
                 <div className="content">
-                    {props.taskInfo.content}
+                    {trim(props.taskInfo.content)}
                 </div>
                 <div className="progress-bar">
                     <div className="progress-color"></div>
@@ -23,6 +27,7 @@ const TaskTile = (props) => {
                     <div>Progress</div>
                     <div>{props.taskInfo.progress}%</div>
                 </div>
+                
             </div>
         </div> 
     );
