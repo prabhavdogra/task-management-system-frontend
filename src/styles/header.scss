@@ -1,5 +1,4 @@
 @import 'common.scss';
-// Header Styling
 
 .header {
     background-color: #FCFBFF;
@@ -8,10 +7,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.042), 0 6px 20px 0 rgba(0, 0, 0, 0.059);
 }
 
 .header .header-icon:first-child {
@@ -26,6 +26,10 @@
 .header svg {
     vertical-align: top;
     color: $fontPrimary;
+}
+
+.header li {
+    list-style-type: none;
 }
 
 .header .header-icon g {

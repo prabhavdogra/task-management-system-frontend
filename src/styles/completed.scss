@@ -1,0 +1,68 @@
+@import 'common.scss';
+
+.completed .completed-tasks-heading {
+    padding-left: 4rem;
+    padding-top: 3rem;
+    font-size: 1.5rem;
+    color: $fontPrimary
+}
+
+.tasks  {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: wrap;
+}
+
+.task-tile {
+    min-width: 15rem;
+    margin: 0.8rem;
+}
+
+.tasks .tile-container {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    padding-top: 1rem;
+}
+
+.tasks .tile-container .heading {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.tasks .tile-container .subheading {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.task-tile .date {
+    color: #D9D9D9;
+    padding-bottom: 1rem;
+}
+
+.tasks .progress-bar{
+    margin-top: 1rem;
+    height: 0.6rem;
+    background-color: #D9D9D9;
+    border-radius: 1rem;
+}
+
+.tasks .progress-color {
+    background-color: #7581E8;
+    width: 70%;
+    height: 0.6rem;
+    border-radius: 1rem;
+}
+
+.progress-info {
+    padding-top: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}

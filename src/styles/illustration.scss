@@ -1,0 +1,46 @@
+@import 'common.scss';
+
+.illustration .heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    color: $fontPrimary;
+}
+
+.white-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-task-btn {
+    padding-top: 2rem;
+}
+
+.add-task-btn button {
+    text-decoration: none;
+    color: #FCFBFF;
+    background-color: $primaryPurple;
+    border-style: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.add-task-btn button:active {
+    background-color: #7233a2;
+}

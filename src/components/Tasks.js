@@ -1,12 +1,10 @@
-import TaskTile from "../components/TaskTile";
-import '../styles/completed.scss'
+import TaskTile from "./TaskTile";
 
-const Completed = () => {
-    console.log("Completed Rendered");
+const Tasks = () => {
     return ( 
-        <div className="completed">
-            <div className="completed-tasks-heading">
-            Completed Tasks
+        <div className="all-tasks">
+            <div className="all-tasks-heading">
+            Ongoing Tasks
             </div>
             <div className="tasks">
                 <TaskTile/>
@@ -22,7 +20,7 @@ const Completed = () => {
                 <TaskTile/>
             </div> 
         </div>
-     );
+    );
 }
  
-export default Completed;
+export default Tasks;

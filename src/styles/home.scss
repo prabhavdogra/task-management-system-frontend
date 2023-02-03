@@ -1,0 +1,21 @@
+.search-bar {
+    padding-left: 3rem;
+    margin-top: 4rem;
+}
+.search-bar input {
+    background-color: #FCFBFF;
+    border-style: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-radius: 2rem;
+    width: 25%;
+    font-size: 1rem;
+}
+
+.search-bar input[type='text'] {
+    background-image: url(../assets/images/search_icon.svg);
+    background-position: 90%;
+    background-repeat: no-repeat;
+}

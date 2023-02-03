@@ -1,0 +1,17 @@
+@import 'common.scss';
+
+.settings {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 2rem;
+}
+
+.settings .heading {
+    font-size: 1.5em;
+    padding-bottom: 2rem;
+    color: $fontPrimary;
+}
+
+.input-tile {
+    padding-top: 1rem;
+}
