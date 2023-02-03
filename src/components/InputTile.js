@@ -6,7 +6,11 @@ const InputTile = (props) => {
             <div className="label">
                 {props.fieldData.label}
             </div>
-            <input class="input-tile" type="text" value={props.fieldData.value}/>
+            {
+            props.fieldData.value !== null ? 
+            <input class="input-text" type="text" value={props.fieldData.value}/>
+            : <input class="input-text" type="text"/>
+            }
         </div>
      );
 }

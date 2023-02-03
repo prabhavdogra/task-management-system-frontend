@@ -1,0 +1,46 @@
+@import 'common.scss';
+
+.login {
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login button {
+    margin-top: 1.5rem;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    border-radius: 1rem;
+    background-color: $primaryPurple;
+    color: white;
+    width: 12rem;
+    margin-bottom: 1rem;
+}
+
+.login button:active {
+    background-color: #7233a2;
+}
+
+.login .container {
+    width: 100%;
+}
+
+.login .input-tile {
+    padding-top: 1rem;
+    max-width: 50rem;
+}
+
+.new-user {
+    color: $fontPrimary;
+    list-style: none;
+    padding-bottom: 3rem;
+}
+

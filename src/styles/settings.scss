@@ -1,17 +1,48 @@
 @import 'common.scss';
 
 .settings {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 2rem;
 }
 
 .settings .heading {
     font-size: 1.5em;
+    padding-left: 3rem;
     padding-bottom: 2rem;
     color: $fontPrimary;
 }
 
-.input-tile {
+.settings .input-tile {
     padding-top: 1rem;
+    padding-left: 3rem;
+}
+
+
+.settings button {
+    margin-top: 1.5rem;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    border-radius: 1rem;
+    background-color: $primaryPurple;
+    color: white;
+    width: 12rem;
+    margin-bottom: 1rem;
+}
+
+.settings button:active {
+    background-color: #7233a2;
+}
+
+.setting-button {
+    margin-top: 3rem;
+    margin-left: 6rem;
+    margin-right: 3rem;
+    display: flex;
+    justify-content: space-between;
 }

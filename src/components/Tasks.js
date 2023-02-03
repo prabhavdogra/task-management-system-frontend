@@ -7,17 +7,12 @@ const Tasks = () => {
             Ongoing Tasks
             </div>
             <div className="tasks">
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
-                <TaskTile/>
+                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
+                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
+                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
+                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
+                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
+                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
             </div> 
         </div>
     );

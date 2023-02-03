@@ -7,10 +7,21 @@ const Settings = () => {
         <div className="heading">
             User Details
         </div>
-        <InputTile fieldData={{label: "First Name", value:"Prabhav"}}/>
-        <InputTile fieldData={{label: "Last Name", value:"Dogra"}}/>
-        <InputTile fieldData={{label: "Name", value:"Prabhav"}}/>
-        <InputTile fieldData={{label: "Name", value:"Prabhav"}}/>
+        <InputTile fieldData={{label: "Name", value:"Prabhav Dogra"}}/>
+        <InputTile fieldData={{label: "Email", value:"prabhav.dogra@zomato.com"}}/>
+        <InputTile fieldData={{label: "Phone Number", value:"9999206777"}}/>
+        <div className="setting-button">
+            <div>
+                <button>
+                    Save
+                </button>
+            </div>
+            <div>
+                <button>
+                    Sign Out
+                </button>
+            </div>
+        </div>
     </div> );
 }
  
