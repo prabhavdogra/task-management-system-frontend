@@ -72,6 +72,7 @@
     width: 60%;
     top: 30%;
     padding: 2rem;
+    padding-right: 4rem;
     margin-left: 10%;
     background-color: #F3F5F9;
     border-radius: 1rem;
@@ -91,7 +92,6 @@
 
 .modal .date {
     color: #717171;
-    padding-bottom: 1rem;
 }
 
 .modal .heading {
@@ -108,23 +108,6 @@
     padding-bottom: 1rem;
 }
 
-.modal .update {
-    border-style: none;
-    font-size: 0.8rem;
-    background-color: $primaryPurple;
-    color: white;
-    border-radius: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-weight: 600;
-}
-
-.modal .mark-completed:active {
-    background-color: #7233a2;
-}
-
 .overlay {
     position: fixed;
     top: 0;
@@ -138,17 +121,25 @@
     z-index: 1;
 }
 
-.modal .progress-percent {
-    margin-left: 1rem;
-    font-weight: 500;
+.modal .input-tile {
+    margin-top: 1rem;
 }
 
-.modal input {
-    margin-top: 0.3rem;
+
+.modal .update {
     border-style: none;
-    border-radius: 2rem;
-    padding: 0.4rem;
-    padding-left: 1rem;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    background-color: $primaryPurple;
+    color: white;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 600;
+}
+
+.modal .update:active {
+    background-color: #7233a2;
 }

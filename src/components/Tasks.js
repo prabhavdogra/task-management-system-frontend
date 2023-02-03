@@ -1,3 +1,4 @@
+import InputTile from "./InputTile";
 import TaskTile from "./TaskTile";
 
 const Tasks = () => {
@@ -21,12 +22,9 @@ const Tasks = () => {
                         </div>
                     </div>
                     <div className="date">1 Nov 2002</div>
-                    <div className="heading">Web Designing</div>
-                    <div className="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quidem amet, unde numquam esse velit odit vero, asperiores quis hic rem aliquid libero delectus earum ex fugiat suscipit quisquam eum.</div>
-                    <label className="progress-percent">Progress</label>
-                    <div className="progress-bar">
-                        <input type="text" value="20%"/>
-                    </div>
+                    <InputTile fieldData={{label: "Heading", value: "Web Designing"}}></InputTile>
+                    <InputTile fieldData={{label: "Content", value: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quidem amet, unde numquam esse velit odit vero, asperiores quis hic rem aliquid libero delectus earum ex fugiat suscipit quisquam eum."}}></InputTile>
+                    <InputTile fieldData={{label: "Progress", value: "20%"}}></InputTile>
                     <button className="update">
                         Update Progress
                     </button>
