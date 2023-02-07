@@ -15,7 +15,7 @@ const Tasks = () => {
                 <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
                 <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
                 <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
-                <section className="modal">
+                {/* <section className="modal">
                     <div className="close">
                         <div className="close-icon">
                             <button class="close-button">⨉</button>
@@ -29,7 +29,7 @@ const Tasks = () => {
                         Update Progress
                     </button>
                 </section>
-                <div className="overlay"></div>
+                <div className="overlay"></div> */}
             </div> 
         </div>
     );

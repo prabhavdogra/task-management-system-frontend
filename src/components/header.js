@@ -2,33 +2,20 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/header.scss'
 
-const Header = () => {
+const Header = (props) => {
     useEffect(() => {
-        const makeAllOtherInactive = () => {
-            const tabElements = document.getElementsByClassName("header-icon");
-            for (let i = 0; i < tabElements.length; i++) {
-                tabElements[i].classList.remove('header-active')
-            }
-        };
-        const homeTab = document.getElementById("header-home");
-        const completedTab = document.getElementById('header-completed');
-        const settingsTab = document.getElementById('header-settings');
-        homeTab.getElementsByTagName("svg")[0].addEventListener('click', () => {
-            makeAllOtherInactive();
-            homeTab.classList.add('header-active');
-        });
-        completedTab.getElementsByTagName("svg")[0].addEventListener('click', () => {
-            makeAllOtherInactive();
-            completedTab.classList.add('header-active');
-        });
-        settingsTab.getElementsByTagName("svg")[0].addEventListener('click', () => {
-            makeAllOtherInactive();
-            settingsTab.classList.add('header-active');
-        });
+        const tabElements = document.getElementsByClassName("header-icon");
+        for (let i = 0; i < tabElements.length; i++) {
+            tabElements[i].classList.remove('header-active')
+        }
+        const selected = document.getElementById(props.selectedTab);
+        selected.classList.add('header-active');
+        console.log(selected)
+        
     });
     return ( 
         <div className="header">
-            <div id="header-home" className="header-icon header-active">
+            <div id="header-home" className="header-icon">
                 <li><Link to="/">
                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M13.1378 14.8622V2.60022C13.1378 2.1165 12.7453 1.72132 12.2626 1.75354C11.8212 1.78301 11.3825 1.8347 10.9482 1.90811C9.12901 2.21562 7.38654 2.90435 5.83884 3.93849C3.67834 5.38209 1.99443 7.43393 1.00006 9.83456C0.00569243 12.2352 -0.25448 14.8768 0.252445 17.4252C0.759371 19.9737 2.01063 22.3147 3.84798 24.152C5.68534 25.9894 8.02627 27.2406 10.5748 27.7476C13.1232 28.2545 15.7648 27.9943 18.1654 26.9999C20.5661 26.0056 22.6179 24.3217 24.0615 22.1612C25.0957 20.6135 25.7844 18.871 26.0919 17.0518C26.1653 16.6175 26.217 16.1788 26.2465 15.7374C26.2787 15.2547 25.8835 14.8622 25.3998 14.8622H13.1378ZM23.8648 17.0518H11.824C11.3403 17.0518 10.9482 16.6597 10.9482 16.176V4.1352C9.56434 4.41768 8.24122 4.96672 7.05534 5.7591C5.25492 6.9621 3.85166 8.67198 3.02302 10.6725C2.19438 12.673 1.97757 14.8743 2.40001 16.9981C2.82245 19.1218 3.86516 21.0726 5.39629 22.6037C6.92742 24.1348 8.8782 25.1776 11.0019 25.6C13.1257 26.0224 15.327 25.8056 17.3275 24.977C19.328 24.1483 21.0379 22.7451 22.2409 20.9447C23.0333 19.7588 23.5823 18.4357 23.8648 17.0518Z" 

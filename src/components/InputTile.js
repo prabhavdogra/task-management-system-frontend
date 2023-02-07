@@ -8,8 +8,8 @@ const InputTile = (props) => {
             </div>
             {
             props.fieldData.value !== null ? 
-            <input class="input-text" type="text" value={props.fieldData.value}/>
-            : <input class="input-text" type="text"/>
+            <input className="input-text" type="text" value={props.fieldData.value} id={props.fieldData.inputDivID}/>
+            : <input className="input-text" type="text" id={props.fieldData.inputDivID}/>
             }
         </div>
      );

@@ -18,6 +18,9 @@ const Signup = () => {
             <InputTile fieldData={{label: "Password"}}/>
         </div>
         <div className="container">
+            <InputTile fieldData={{label: "Phone Number"}}/>
+        </div>
+        <div className="container">
             <button>
                 Sign Up
             </button>
