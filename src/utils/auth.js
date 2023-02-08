@@ -33,7 +33,10 @@ const PrivateRoute = ({children}) => {
         })
     })
     return (
-        isLoading ? <Loading/> :
+        isLoading 
+        ? 
+        <Loading/> 
+        :
         (isAuthenticated ? children : <Navigate to="/login" />)
     );
 };
