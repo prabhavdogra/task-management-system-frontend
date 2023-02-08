@@ -1,0 +1,14 @@
+@import 'common.scss';
+
+.no-tasks-completed {
+    display: flex;
+}
+
+.no-tasks-completed .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: $primaryPurple;
+    font-weight: 700;
+}

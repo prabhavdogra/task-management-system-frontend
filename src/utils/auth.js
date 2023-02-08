@@ -26,7 +26,6 @@ const PrivateRoute = ({children}) => {
                 "Accept": "application/json",
             },
         }).then((response) => {
-            console.log(response.status === 200)
             if(response.status === 200)
                 setIsAuthenticated(true)
             setIsLoading(false)

@@ -1,6 +1,35 @@
+import { useEffect, useState } from "react";
+import InputTile from "./InputTile";
 import TaskTile from "./TaskTile";
+import '../utils/formatDate'
+import formatDate from "../utils/formatDate";
+import '../styles/tasks.scss'
+import '../styles/modal.scss'
 
 const Tasks = () => {
+    const [ongoingTasks, setOngoingTasks] = useState([])
+    useEffect(() => {
+        const JWTtoken = localStorage.getItem('token')
+        fetch("http://localhost:3000/api/task", {
+            headers: {
+                "Accept": "application/json",
+                "Authorization": JWTtoken
+            },
+        }).then((response) => {
+                if(response.status === 200) {
+                    response.text().then((data) => {
+                        const taskData = JSON.parse(data);
+                        setOngoingTasks(taskData)
+                        // console.log(taskData)
+                    });
+                } else {
+                    response.text().then((data) => {
+                        // setApiLog(data)
+                    });
+                }
+                // setIsValidatingCredentials(false)
+            });
+    }, [])
     
     return ( 
         <div className="all-tasks">
@@ -8,13 +37,24 @@ const Tasks = () => {
                 Ongoing Tasks
             </div>
             <div className="tasks">
-                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
-                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ipsa iusto non facilis consequatur, molestias necessitatibus officiis ut voluptate, sed nostrum deserunt maiores tempora quam excepturi voluptatum dolorem pariatur fugit.", content: "Designing", progress: 30}}/>
-                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
-                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
-                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
-                <TaskTile taskInfo={{date: "1 Nov, 2002", heading: "Web Dashboard", content: "Designing", progress: 30}}/>
-                {/* <section className="modal">
+                {
+                    ongoingTasks.map((ongoingTask) => {
+                        if(ongoingTask["progress"] === 100) {
+                            return <></>
+                        }
+                        return <TaskTile key={ongoingTask["id"]} taskInfo={
+                            {
+                                id: ongoingTask["id"],
+                                date: formatDate(ongoingTask["time"]),
+                                heading: ongoingTask["heading"], 
+                                content: ongoingTask["content"],
+                                progress: ongoingTask["progress"]
+                            }
+                        }/>
+                    })
+                }
+
+                <section className="modal">
                     <div className="close">
                         <div className="close-icon">
                             <button class="close-button">⨉</button>
@@ -28,7 +68,7 @@ const Tasks = () => {
                         Update Progress
                     </button>
                 </section>
-                <div className="overlay"></div> */}
+                <div className="overlay"></div>
             </div> 
         </div>
     );
