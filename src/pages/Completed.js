@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Header from "../components/Header";
 import TaskTile from "../components/TaskTile";
 import '../styles/completed.scss'

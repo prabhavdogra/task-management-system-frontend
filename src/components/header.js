@@ -10,8 +10,6 @@ const Header = (props) => {
         }
         const selected = document.getElementById(props.selectedTab);
         selected.classList.add('header-active');
-        console.log(selected)
-        
     });
     return ( 
         <div className="header">

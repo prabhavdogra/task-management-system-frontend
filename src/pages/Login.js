@@ -1,15 +1,39 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { redirect, Link } from "react-router-dom";
 import LoginImage from "../assets/images/login.webp";
 import InputTile from "../components/InputTile";
 import '../styles/login.scss'
 
 const Login = () => {
-    // const [ApiLog, setApiLog] = useState("");
-    // const PostCredentials = () => {
-    //     const email = document.getElementById("email").value;
-    //     const password = document.getElementById("password").value;
-    // }
+    const [ApiLog, setApiLog] = useState("");
+    const PostCredentials = () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        var credentials = {
+            "email_id" : email,
+            "password" : password
+        }
+        fetch("http://localhost:3000/api/auth/login", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(credentials)
+        }).then((response) => {
+            if(response.status === 200) {
+                setApiLog("")
+                response.text().then((data) => {
+                    const responseData = JSON.parse(data);
+                    localStorage.setItem("token", responseData["token"])
+                    return redirect("/");
+                });
+            } else {
+                response.text().then((data) => {
+                    setApiLog(data)
+                });
+            }
+        });
+    }
     return ( 
     <div className="login">
         <img src={LoginImage} alt="" />
@@ -20,12 +44,12 @@ const Login = () => {
             <InputTile fieldData={{label: "Password", inputDivID: "password"}}/>
         </div>
         <div className="container">
-            <button>
+            <button onClick={PostCredentials}>
                 Log In
             </button>
         </div>
         <div className="api-status">
-            {/* {ApiLog} */}
+            {ApiLog}
         </div>
         <li className="new-user">
             <Link to="/signup">

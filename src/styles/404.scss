@@ -1,0 +1,32 @@
+@import 'common.scss';
+.page-not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.page-not-found {
+    padding-top: 15%;
+}
+.page-not-found .text {
+    font-size: 2rem;
+}
+.page-not-found button {
+    margin-top: 1.5rem;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    border-radius: 1rem;
+    background-color: $primaryPurple;
+    color: white;
+    width: 12rem;
+    margin-bottom: 1rem;
+}
+
+.page-not-found button:active {
+    background-color: #7233a2;
+}

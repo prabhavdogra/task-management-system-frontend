@@ -1,4 +1,3 @@
-import InputTile from "./InputTile";
 import TaskTile from "./TaskTile";
 
 const Tasks = () => {
