@@ -7,11 +7,17 @@ const PrivateRoute = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     useEffect(() => {
         const JWTtoken = localStorage.getItem('token')
-        fetch("http://localhost:3000/api/auth/authenticate/" + JWTtoken, {
+        fetch("http://localhost:3000/api/auth/authenticate", {
+            method: 'POST',
             headers: {
-                "Accept": "application/json",
+                "Content-type": "application/json",
+                "Authorization": JWTtoken
             },
-        }).then((response) => {
+            
+            body: JSON.stringify({})
+        })
+        .then((response) => {
+            console.log(response)
             if(response.status === 200) {
                 setIsAuthenticated(true)
             }
