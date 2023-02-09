@@ -17,7 +17,6 @@ const PrivateRoute = ({children}) => {
             body: JSON.stringify({})
         })
         .then((response) => {
-            console.log(response)
             if(response.status === 200) {
                 setIsAuthenticated(true)
             }

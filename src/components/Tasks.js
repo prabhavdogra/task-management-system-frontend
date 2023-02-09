@@ -31,7 +31,6 @@ const Tasks = () => {
             "content" : content,
             "progress" : Number(progress),
         }
-        console.log(taskDetails);
         setIsModalUpdating(true);
 
         fetch("http://localhost:3000/api/task/update", {
@@ -45,27 +44,27 @@ const Tasks = () => {
             if(response.status !== 200) {
                 console.log("Something went wrong", response.status);
             }
-        });
-
-        fetch("http://localhost:3000/api/task", {
+        }).then(() => {
+            fetch("http://localhost:3000/api/task", {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": JWTtoken
-            },
-        }).then((response) => {
-            if(response.status === 200) {
-                response.text().then((data) => {
-                    const taskData = JSON.parse(data)
-                    setOngoingTasks(taskData)
+            }})
+            .then((response) => {
+                if(response.status === 200) {
+                    response.text().then((data) => {
+                        const taskData = JSON.parse(data)
+                        setOngoingTasks(taskData)
+                        setIsModalUpdating(false);
+                        hideModal()
+                    })
+                } else {
+                    console.log("Something went wrong", response.status);
                     setIsModalUpdating(false);
                     hideModal()
-                })
-            } else {
-                console.log("Something went wrong", response.status);
-                setIsModalUpdating(false);
-                hideModal()
-            }
-        })
+                }
+            })
+            })
     }
     useEffect(() => {
         const JWTtoken = localStorage.getItem('token')
