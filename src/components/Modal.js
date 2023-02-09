@@ -24,12 +24,20 @@ const Modal = (props) => {
                     ?
                     <>Updating...</>
                     :
-                    <button className="update" onClick={(e) => {
-                        props.onFormSubmit()
-                    }
-                    }>
-                        Update Task Details
-                    </button>
+                    <div className="buttons">
+                        <button className="update" onClick={() => {
+                            props.onFormSubmit()
+                        }
+                        }>
+                            Update Task Details
+                        </button>
+                        <button onClick={() => {
+                            
+                        }
+                        }>
+                            Delete Task
+                        </button>
+                    </div>
                 }
             </section>
             <div className="overlay" onClick={(e) => props.hideModal()}></div>

@@ -7,7 +7,7 @@ const Illustration = () => {
     const [modalStatus, setModalStatus] = useState(false)
     const [isModalUpdating, setIsModalUpdating] = useState(false);
     const modalData = {
-        date: "",
+        date: null,
         heading: "",
         content: "",
         progress: "",
@@ -18,7 +18,6 @@ const Illustration = () => {
         const progress = document.getElementById("progress").value;
         const JWTtoken = localStorage.getItem('token')
         var taskDetails = {
-            "date": null,
             "id" : modalData.id,
             "heading" : heading,
             "content" : content,

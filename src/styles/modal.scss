@@ -6,19 +6,16 @@
     top: 15%;
     padding: 2rem;
     padding-right: 4rem;
-    margin-left: 10%;
+    margin-left: 5%;
     background-color: #F3F5F9;
     border-radius: 1rem;
     z-index: 2;
-    // New added
-    // padding: 0;
-    // margin-right: 20%;
-    // margin-left: 20%;
 }
 
 .modal-popup .close {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 .modal-popup .close-button {
@@ -63,7 +60,12 @@
     margin-top: 1rem;
 }
 
-.modal-popup .update {
+.modal-popup .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-popup .buttons button {
     border-style: none;
     font-size: 1rem;
     background-color: $primaryPurple;
@@ -77,10 +79,6 @@
     font-weight: 600;
 }
 
-.modal-popup .update:active {
+.modal-popup .buttons button:active {
     background-color: #7233a2;
 }
-
-// .modal {
-//     display: flex;
-// }

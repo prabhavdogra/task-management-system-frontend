@@ -1,4 +1,5 @@
 import '../styles/tasks.scss'
+import formatDate from '../utils/formatDate';
 
 const TaskTile = (props) => {
     let x = props.taskInfo.heading;
@@ -19,7 +20,7 @@ const TaskTile = (props) => {
         <div className="task-tile">
             <div className="tile-container" onClick={()=>{animateToTopAndOpenModal()}}>
                 <div className="date">
-                    {props.taskInfo.date === null ? "" : props.taskInfo.date}
+                    {formatDate(props.taskInfo.date)}
                 </div>
                 <div className="heading">
                     {trim(props.taskInfo.heading)}
