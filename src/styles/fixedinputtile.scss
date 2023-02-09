@@ -1,0 +1,26 @@
+@import 'common.scss';
+
+.fixed-input-tile input {
+    border-style: none;
+    padding-left: 1.6rem;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background-color: rgb(214, 214, 214);
+    margin: 0;
+}
+
+.input-text {
+    width: 100%;
+    // width: auto;
+    // width: 100%;
+    // box-sizing: inherit;
+}
+
+.fixed-input-tile .label {
+    padding-left: 1.6rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}

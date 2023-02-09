@@ -3,43 +3,24 @@ import TaskTile from "./TaskTile";
 import '../utils/formatDate'
 import formatDate from "../utils/formatDate";
 import '../styles/tasks.scss'
-import '../styles/modal.scss'
 import Modal from "./Modal";
 
 const Tasks = () => {
     const [ongoingTasks, setOngoingTasks] = useState([])
     const [modalStatus, setModalStatus] = useState(false)
-    const attachEventListenersToTaskTiles = () => {
-        console.log(11)
-        // document.querySelectorAll('.tile-container').forEach(item => {
-        //     item.addEventListener('click', event => {
-        //         setModalStatus(true)
-        //       //handle click
-        //     })
-        //   })
-          
-        // var taskTiles = document.getElementsByClassName("task-tile")
-        var taskTiles = document.getElementsByClassName("tile-container")
-        // console.log(taskTiles)
-        // taskTiles.forEach(taskTile => {
-        //     taskTile.addEventListener('click', function handleClick(event) {
-        //       console.log('taskTile clicked', event);
-        //     });
-        //   });
-          
-        for (var i = 0; i < taskTiles.length; i++) {
-            taskTiles[i].addEventListener("click", () => {
-                console.log("Modal status changed")
-                setModalStatus(true);
-            }, false)
-        }
-    }
+    const [modalData, setModalData] = useState(null)
 
-    const showModal = () => {
+    const showModal = (props) => {
         setModalStatus(true)
+        setModalData(props)
     }
     const hideModal = () => {
         setModalStatus(false)
+        setModalData(null)
+    }
+
+    const updateTask = () => {
+
     }
 
     useEffect(() => {
@@ -93,7 +74,10 @@ const Tasks = () => {
             {
                 modalStatus
                 ?
-                <Modal hideModal={hideModal}/>
+                <Modal hideModal={hideModal}
+                modalData={modalData}
+                onFormSubmit={updateTask}
+                />
                 :
                 <></>
             }

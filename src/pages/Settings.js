@@ -1,3 +1,4 @@
+import FixedInputTile from "../components/FixedInputTile";
 import Header from "../components/Header";
 import InputTile from "../components/InputTile";
 import '../styles/settings.scss'
@@ -11,7 +12,7 @@ const Settings = () => {
                 User Details
             </div>
             <InputTile fieldData={{label: "Name", value:"Prabhav Dogra"}}/>
-            <InputTile fieldData={{label: "Email", value:"prabhav.dogra@zomato.com"}}/>
+            <FixedInputTile fieldData={{label: "Email", value:"prabhav.dogra@zomato.com"}}/>
             <InputTile fieldData={{label: "Phone Number", value:"9999206777"}}/>
             <div className="setting-button">
                 <div>
