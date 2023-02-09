@@ -83,10 +83,8 @@ const Tasks = () => {
                     });
                 } else {
                     response.text().then((data) => {
-                        // setApiLog(data)
                     });
                 }
-                // setIsValidatingCredentials(false)
             });
     }, [])
     return ( 
