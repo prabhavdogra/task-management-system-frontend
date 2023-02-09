@@ -8,7 +8,7 @@ const InputTile = (props) => {
             </div>
             {
             props.fieldData.value !== null ? 
-            <input className="input-text" type="text" value={props.fieldData.value} id={props.fieldData.inputDivID}/>
+            <input className="input-text" type="text" value={props.fieldData.value} id={props.fieldData.inputDivID} onChange={() => {}}/>
             : <input className="input-text" type="text" id={props.fieldData.inputDivID}/>
             }
         </div>

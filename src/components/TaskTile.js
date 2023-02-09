@@ -10,7 +10,7 @@ const TaskTile = (props) => {
     }
     return ( 
         <div className="task-tile">
-            <div className="tile-container">
+            <div className="tile-container" onClick={(e)=>{props.showModal()}}>
                 <div className="date">
                     {props.taskInfo.date}
                 </div>
