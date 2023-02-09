@@ -3,6 +3,7 @@ import FixedInputTile from "../components/FixedInputTile";
 import Header from "../components/Header";
 import InputTile from "../components/InputTile";
 import '../styles/settings.scss'
+import Loading from "./Loading";
 
 const Settings = () => {
     const [isLoading, setIsLoading] = useState(false)
@@ -79,7 +80,7 @@ const Settings = () => {
             {
             isLoading
             ?
-            "Loading..."
+            <Loading/>
             :
             <div className="settings">
                     <div className="heading">
@@ -93,7 +94,7 @@ const Settings = () => {
                             {
                                 isLoading
                                 ?
-                                "Loading..."
+                                <Loading/>
                                 :
                                 <button onClick={SaveDetails}>
                                     Save

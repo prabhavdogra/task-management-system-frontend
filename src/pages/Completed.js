@@ -3,8 +3,11 @@ import Header from "../components/Header";
 import NoTasksCompleted from "../components/NoTasksCompleted";
 import TaskTile from "../components/TaskTile";
 import '../styles/completed.scss'
+import formatDate from "../utils/formatDate";
+import Loading from "./Loading";
 
 const Completed = (props) => {
+    const [isLoading, setIsLoading] = useState(true);
     const [ongoingTasks, setOngoingTasks] = useState([])
     const [countOfCompletedTasks, setCountOfCompletedTasks] = useState(0)
     useEffect(() => {
@@ -26,24 +29,19 @@ const Completed = (props) => {
                         })
                     });
                 } else {
-                    response.text().then((data) => {
-                        // setApiLog(data)
-                    });
+                    console.log("Something went wrong!", response.status)
                 }
-                // setIsValidatingCredentials(false)
+                setIsLoading(false);
             });
     })
-
-    const formatDate = (date) => {
-        date = date.substring(0, 10)
-        let res = new Date( Date.parse(date) );
-        res = res.toString()
-        res = res.substring(4, 10) + ", " + res.substring(11, 16)
-        return res
-    }
     return ( 
         <>
             <Header selectedTab="header-completed"/>
+            {
+            isLoading
+            ?
+            <Loading/>
+            :
             <div className="completed">
                 <div className="completed-tasks-heading">
                 Completed Tasks
@@ -71,6 +69,7 @@ const Completed = (props) => {
                 }
                 </div> 
             </div>
+            }
         </>
      );
 }

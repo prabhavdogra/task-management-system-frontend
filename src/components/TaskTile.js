@@ -8,11 +8,18 @@ const TaskTile = (props) => {
         else
             return text;
     }
+    const animateToTopAndOpenModal = () => {
+        window.scrollTo({ 
+            top: 0, 
+            behavior: 'smooth' 
+        }); 
+        props.showModal(props.taskInfo)
+    }
     return (
         <div className="task-tile">
-            <div className="tile-container" onClick={(e)=>{props.showModal(props.taskInfo)}}>
+            <div className="tile-container" onClick={()=>{animateToTopAndOpenModal()}}>
                 <div className="date">
-                    {props.taskInfo.date}
+                    {props.taskInfo.date === null ? "" : props.taskInfo.date}
                 </div>
                 <div className="heading">
                     {trim(props.taskInfo.heading)}
@@ -32,5 +39,5 @@ const TaskTile = (props) => {
         </div> 
     );
 }
- 
+
 export default TaskTile;

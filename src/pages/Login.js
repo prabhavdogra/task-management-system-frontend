@@ -3,6 +3,7 @@ import { Navigate, Link } from "react-router-dom";
 import LoginImage from "../assets/images/login.webp";
 import InputTile from "../components/InputTile";
 import '../styles/login.scss'
+import Loading from "./Loading";
 
 const Login = () => {
     const [ApiLog, setApiLog] = useState("");
@@ -50,7 +51,7 @@ const Login = () => {
             </div>
             <div className="container">
                 {isValidatingCredentials ? 
-                "Loading.."
+                <Loading/>
                 :
                 <button onClick={PostCredentials}>
                     Log In

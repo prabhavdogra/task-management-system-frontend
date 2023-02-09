@@ -18,6 +18,7 @@ const Illustration = () => {
         const progress = document.getElementById("progress").value;
         const JWTtoken = localStorage.getItem('token')
         var taskDetails = {
+            "date": null,
             "id" : modalData.id,
             "heading" : heading,
             "content" : content,

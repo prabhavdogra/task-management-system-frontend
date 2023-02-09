@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import Loading from '../pages/Preloader';
+import Loading from '../pages/Loading';
 
 const PrivateRoute = ({children}) => {
     const [isLoading, setIsLoading] = useState(true);
