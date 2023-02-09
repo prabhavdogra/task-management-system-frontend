@@ -5,11 +5,40 @@ import Modal from './Modal';
 
 const Illustration = () => {
     const [modalStatus, setModalStatus] = useState(false)
+    const [isModalUpdating, setIsModalUpdating] = useState(false);
     const modalData = {
         date: "",
         heading: "",
         content: "",
         progress: "",
+    }
+    const addTask = () => {
+        const heading = document.getElementById("heading").value;
+        const content = document.getElementById("content").value;
+        const progress = document.getElementById("progress").value;
+        const JWTtoken = localStorage.getItem('token')
+        var taskDetails = {
+            "id" : modalData.id,
+            "heading" : heading,
+            "content" : content,
+            "progress" : Number(progress),
+        }
+        setIsModalUpdating(true);
+        console.log(taskDetails)
+        fetch("http://localhost:3000/api/task/create", {
+            method: 'POST',
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": JWTtoken
+            },
+            body: JSON.stringify(taskDetails)
+        }).then((response) => {
+            if(response.status !== 200) {
+                console.log("Something went wrong", response.status);
+            }
+            setIsModalUpdating(false);
+            hideModal()
+        })
     }
     const showModal = () => setModalStatus(true)
     const hideModal = () => setModalStatus(false)
@@ -34,11 +63,12 @@ const Illustration = () => {
                 </div>
             </div>
             {
-                modalStatus 
+                modalStatus
                 ?
                 <Modal hideModal={hideModal}
                 modalData={modalData}
-                onFormSubmit={() => {}}
+                onFormSubmit={addTask}
+                isModalUpdating={isModalUpdating}
                 />
                 :
                 <></>

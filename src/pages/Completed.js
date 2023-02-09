@@ -32,7 +32,7 @@ const Completed = (props) => {
                 }
                 // setIsValidatingCredentials(false)
             });
-    }, [])
+    })
 
     const formatDate = (date) => {
         date = date.substring(0, 10)

@@ -21,7 +21,7 @@ const TaskTile = (props) => {
                     {trim(props.taskInfo.content)}
                 </div>
                 <div className="progress-bar">
-                    <div className="progress-color"></div>
+                    <div className="progress-color" style={{width: `${props.taskInfo.progress}%`}}></div>
                 </div>
                 <div className="progress-info">
                     <div>Progress</div>

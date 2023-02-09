@@ -1,19 +1,9 @@
-import { useState } from "react";
 import InputTile from "./InputTile";
 import '../styles/modal.scss'
 
 const Modal = (props) => {
-    const [heading, setHeading] = useState(props.modalData.heading)
-    const [content, setContent] = useState(props.modalData.content)
-    const [progress, setProgress] = useState(props.modalData.progress)
-
-    const [isUpdating, setIsUpdating] = useState(false)
     
-    const updateTaskDetails = () => {
-        // const heading;
-        // const content;
-        // const progress;
-    }
+
     return ( 
         <div className="modal">
             <section className="modal-popup">
@@ -23,16 +13,16 @@ const Modal = (props) => {
                     </div>
                 </div>
                 <div className="date">1 Nov 2002</div>
-                <InputTile fieldData={{label: "Heading", value: props.modalData.heading}} setFieldText = {setHeading} ></InputTile>
-                <InputTile fieldData={{label: "Content", value: props.modalData.content}} setFieldText = {setContent}></InputTile>
-                <InputTile fieldData={{label: "Progress", value: props.modalData.progress}} setFieldText = {setProgress}></InputTile>
+                <InputTile fieldData={{label: "Heading", value: props.modalData.heading, inputDivID: "heading"}} ></InputTile>
+                <InputTile fieldData={{label: "Content", value: props.modalData.content, inputDivID: "content"}}></InputTile>
+                <InputTile fieldData={{label: "Progress", value: props.modalData.progress, inputDivID: "progress"}}></InputTile>
                 {
-                    isUpdating
+                    props.isModalUpdating
                     ?
                     <>Updating...</>
                     :
                     <button className="update" onClick={(e) => {
-                        updateTaskDetails()
+                        props.onFormSubmit()
                     }
                     }>
                         Update Task Details
