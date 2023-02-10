@@ -1,7 +1,10 @@
-const Search = () => {
+import { useState } from "react";
+
+const Search = (props) => {
+    
     return (
         <div className="search-bar">
-            <input type="text" placeholder="Search" icon="" />
+            <input type="text" id="search" placeholder="Search" icon="" defaultValue={""} onChange={props.filterSearchResults} />
         </div>
     );
 }
