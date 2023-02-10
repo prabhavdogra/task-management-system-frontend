@@ -9,7 +9,7 @@ import Loading from "./Loading";
 const Completed = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [ongoingTasks, setOngoingTasks] = useState([])
-    const [countOfCompletedTasks, setCountOfCompletedTasks] = useState(0)
+    const [countOfCompletedTasks, setCountOfCompletedTasks] = useState(0);
     useEffect(() => {
         const JWTtoken = localStorage.getItem('token')
         fetch("http://localhost:3000/api/task", {
@@ -18,21 +18,21 @@ const Completed = (props) => {
                 "Authorization": JWTtoken
             },
         }).then((response) => {
-                if(response.status === 200) {
-                    response.text().then((data) => {
-                        const taskData = JSON.parse(data);
-                        setOngoingTasks(taskData)
-                        ongoingTasks.forEach((ongoingTask) => {
-                            if(ongoingTask["progress"] === 100) {
-                                setCountOfCompletedTasks(setCountOfCompletedTasks + 1);
-                            }
-                        })
-                    });
-                } else {
-                    console.log("Something went wrong!", response.status)
-                }
-                setIsLoading(false);
-            });
+            if(response.status === 200) {
+                response.text().then((data) => {
+                    const taskData = JSON.parse(data);
+                    setOngoingTasks(taskData)
+                    ongoingTasks.forEach((ongoingTask) => {
+                        if(ongoingTask["progress"] === 100) {
+                            setCountOfCompletedTasks(setCountOfCompletedTasks + 1);
+                        }
+                    })
+                });
+            } else {
+                console.log("Something went wrong!", response.status)
+            }
+            setIsLoading(false);
+        });
     })
     return ( 
         <>
@@ -52,7 +52,7 @@ const Completed = (props) => {
                     ?
                     ongoingTasks.map((ongoingTask) => {
                         if(ongoingTask["progress"] !== 100) {
-                            return <></>
+                            return null;
                         }
                         return <TaskTile key={ongoingTask["id"]} taskInfo={
                             {

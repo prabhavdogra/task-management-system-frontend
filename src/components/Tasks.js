@@ -82,7 +82,7 @@ const Tasks = (props) => {
                 {
                     props.ongoingTasks.map((ongoingTask) => {
                         if(ongoingTask["progress"] === 100) {
-                            return <></>
+                            return null;
                         }
                         return <TaskTile key={ongoingTask["id"]} taskInfo={
                             {
