@@ -39,6 +39,7 @@ const Illustration = (props) => {
             }
             setIsModalUpdating(false);
             hideModal();
+            updateTasks()
         })
     }
     const updateTasks = () => {
@@ -48,7 +49,7 @@ const Illustration = (props) => {
                 "Content-Type": "application/json",
                 "Authorization": JWTtoken
             }})
-            .then((response) => {
+        .then((response) => {
                 if(response.status === 200) {
                     response.text().then((data) => {
                         const taskData = JSON.parse(data)
