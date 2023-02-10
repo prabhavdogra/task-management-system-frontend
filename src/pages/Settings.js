@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FixedInputTile from "../components/FixedInputTile";
 import Header from "../components/Header";
 import InputTile from "../components/InputTile";
@@ -8,8 +9,10 @@ import Loading from "./Loading";
 const Settings = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [userInfo, setUserInfo] = useState(null)
+    let navigate = useNavigate();
     const SaveDetails = () => {
         const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
         const phone = document.getElementById("phoneno").value;
         const JWTtoken = localStorage.getItem('token')
         var taskDetails = {
@@ -17,7 +20,12 @@ const Settings = () => {
             "phone_no" : phone,
         }
         setIsLoading(true);
-        console.log(taskDetails)
+        
+        setUserInfo({
+            "name": name,
+            "email_id": email,
+            "phone_no": phone,
+        })
         fetch("http://localhost:3000/api/user/update", {
             method: 'POST',
             headers: {
@@ -47,9 +55,6 @@ const Settings = () => {
                     const userData = JSON.parse(data)
                     setUserInfo(userData)
                     setIsLoading(false)
-                    console.log(userData["name"])
-                    console.log(userData["email_id"])
-                    console.log(userData["phone_no"])
                 })
             } else {
                 console.log("Something went wrong", response.status);
@@ -69,10 +74,12 @@ const Settings = () => {
         }).then((response) => {
             if(response.status !== 200) {
                 console.log("Something went wrong", response.status);
+            } else {
+                navigate(`/login`);
             }
         });
-        
     }
+
     return ( 
     <>
         <div className="settings-page">

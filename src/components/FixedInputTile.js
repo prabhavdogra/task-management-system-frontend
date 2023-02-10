@@ -7,9 +7,11 @@ const FixedInputTile = (props) => {
                 {props.fieldData.label}
             </div>
             {
-            props.fieldData.value !== null ? 
-            <input className="input-text" type="text" value={props.fieldData.value} id={props.fieldData.inputDivID} onChange={() => props.setFieldText()}/>
-            : <input className="input-text" type="text" id={props.fieldData.inputDivID} onChange={() => props.setFieldText()}/>
+                props.fieldData.value !== null 
+                ? 
+                <input className="input-text" type="text" value={props.fieldData.value} id={props.fieldData.inputDivID} onChange={() => props.setFieldText()}/>
+                : 
+                <input className="input-text" type="text" id={props.fieldData.inputDivID} onChange={() => props.setFieldText()}/>
             }
         </div>
      );

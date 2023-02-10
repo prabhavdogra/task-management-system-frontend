@@ -2,12 +2,14 @@
 
 .no-tasks-completed {
     display: flex;
+    align-items: center;
+    flex-flow: wrap;
 }
-
+.no-tasks-completed img {
+    width: 80%;
+}
 .no-tasks-completed .text {
     display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 1.5rem;
     color: $primaryPurple;
     font-weight: 700;
