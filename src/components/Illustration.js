@@ -7,6 +7,7 @@ const Illustration = () => {
     const [modalStatus, setModalStatus] = useState(false)
     const [isModalUpdating, setIsModalUpdating] = useState(false);
     const modalData = {
+        id: null,
         date: null,
         heading: "",
         content: "",
@@ -37,7 +38,7 @@ const Illustration = () => {
                 console.log("Something went wrong", response.status);
             }
             setIsModalUpdating(false);
-            hideModal()
+            hideModal();
         })
     }
     const showModal = () => setModalStatus(true)
@@ -69,6 +70,7 @@ const Illustration = () => {
                 modalData={modalData}
                 onFormSubmit={addTask}
                 isModalUpdating={isModalUpdating}
+                // updateNonModal={updateTasks}
                 />
                 :
                 <></>

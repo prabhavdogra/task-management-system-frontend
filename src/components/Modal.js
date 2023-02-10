@@ -3,8 +3,23 @@ import '../styles/modal.scss'
 import formatDate from "../utils/formatDate";
 
 const Modal = (props) => {
-    
-
+    const deleteTask = (id) => {
+        const JWTtoken = localStorage.getItem('token')
+        fetch('http://localhost:3000/api/task/' + id.toString(), { 
+            method: 'DELETE',
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": JWTtoken
+            }
+        })
+        .then((response) => {
+            if(response.status !== 200) {
+                console.log("Something went wrong")
+            }
+            props.hideModal()
+            props.updateNonModal()
+        });
+    }
     return ( 
         <div className="modal">
             <section className="modal-popup">
@@ -31,12 +46,16 @@ const Modal = (props) => {
                         }>
                             Update Task Details
                         </button>
-                        <button onClick={() => {
-                            
+                        {
+                            props.modalData.id
+                            ?
+                            <button onClick={() => deleteTask(props.modalData.id)
+                            }>
+                                Delete Task
+                            </button>
+                            :
+                            <></>
                         }
-                        }>
-                            Delete Task
-                        </button>
                     </div>
                 }
             </section>
