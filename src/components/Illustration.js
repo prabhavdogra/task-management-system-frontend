@@ -3,7 +3,7 @@ import vector from "../assets/images/vector.png";
 import { useState } from 'react';
 import Modal from './Modal';
 
-const Illustration = () => {
+const Illustration = (props) => {
     const [modalStatus, setModalStatus] = useState(false)
     const [isModalUpdating, setIsModalUpdating] = useState(false);
     const modalData = {
@@ -41,6 +41,28 @@ const Illustration = () => {
             hideModal();
         })
     }
+    const updateTasks = () => {
+        const JWTtoken = localStorage.getItem('token')
+        fetch("http://localhost:3000/api/task", {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": JWTtoken
+            }})
+            .then((response) => {
+                if(response.status === 200) {
+                    response.text().then((data) => {
+                        const taskData = JSON.parse(data)
+                        props.setOngoingTasks(taskData)
+                        setIsModalUpdating(false);
+                        hideModal()
+                    })
+                } else {
+                    console.log("Something went wrong", response.status);
+                    setIsModalUpdating(false);
+                    hideModal()
+                }
+            })
+    }
     const showModal = () => setModalStatus(true)
     const hideModal = () => setModalStatus(false)
     return ( 
@@ -70,7 +92,7 @@ const Illustration = () => {
                 modalData={modalData}
                 onFormSubmit={addTask}
                 isModalUpdating={isModalUpdating}
-                // updateNonModal={updateTasks}
+                updateNonModal={updateTasks}
                 />
                 :
                 <></>

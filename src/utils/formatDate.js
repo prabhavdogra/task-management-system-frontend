@@ -1,5 +1,5 @@
 const formatDate = (date) => {
-    if (date == null)
+    if (date === null)
         return ""
     date = date.substring(0, 10)
     let res = new Date( Date.parse(date) );

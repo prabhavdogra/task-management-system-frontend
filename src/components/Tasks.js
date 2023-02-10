@@ -5,8 +5,7 @@ import formatDate from "../utils/formatDate";
 import '../styles/tasks.scss'
 import Modal from "./Modal";
 
-const Tasks = () => {
-    const [ongoingTasks, setOngoingTasks] = useState([])
+const Tasks = (props) => {
     const [isModalUpdating, setIsModalUpdating] = useState(false)
     const [modalStatus, setModalStatus] = useState(false)
     const [modalData, setModalData] = useState(null)
@@ -31,7 +30,7 @@ const Tasks = () => {
                 if(response.status === 200) {
                     response.text().then((data) => {
                         const taskData = JSON.parse(data)
-                        setOngoingTasks(taskData)
+                        props.setOngoingTasks(taskData)
                         setIsModalUpdating(false);
                         hideModal()
                     })
@@ -81,7 +80,7 @@ const Tasks = () => {
             </div>
             <div className="tasks">
                 {
-                    ongoingTasks.map((ongoingTask) => {
+                    props.ongoingTasks.map((ongoingTask) => {
                         if(ongoingTask["progress"] === 100) {
                             return <></>
                         }
