@@ -1,5 +1,5 @@
-import '../styles/illustration.scss'
-import vector from "../assets/images/vector.png";
+import 'styles/illustration.scss'
+import vector from "assets/images/vector.png";
 import { useState } from 'react';
 import Modal from './Modal';
 

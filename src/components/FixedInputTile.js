@@ -1,4 +1,4 @@
-import '../styles/fixedinputtile.scss'
+import 'styles/fixedinputtile.scss'
 
 const FixedInputTile = (props) => {
     return (
