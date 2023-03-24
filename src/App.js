@@ -1,12 +1,12 @@
-import './App.scss';
+import 'App.scss';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from './pages/Login';
-import Home from './pages/Home'
-import Completed from './pages/Completed';
-import Settings from './pages/Settings';
-import PageNotFound from './pages/PageNotFound';
-import Signup from './pages/Signup';
-import PrivateRoute from './utils/auth';
+import Login from 'pages/Login';
+import Home from 'pages/Home'
+import Completed from 'pages/Completed';
+import Settings from 'pages/Settings';
+import PageNotFound from 'pages/PageNotFound';
+import Signup from 'pages/Signup';
+import PrivateRoute from 'utils/auth';
 
 function App() {
   return (

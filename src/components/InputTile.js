@@ -1,4 +1,4 @@
-import '../styles/inputtile.scss'
+import 'styles/inputtile.scss'
 
 const InputTile = (props) => {
     return (

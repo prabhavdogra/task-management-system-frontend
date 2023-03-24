@@ -1,5 +1,5 @@
-import '../styles/tasks.scss'
-import formatDate from '../utils/formatDate';
+import 'styles/tasks.scss'
+import formatDate from 'utils/formatDate';
 
 const TaskTile = (props) => {
     let x = props.taskInfo.heading;

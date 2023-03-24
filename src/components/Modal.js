@@ -1,6 +1,6 @@
-import InputTile from "./InputTile";
-import '../styles/modal.scss'
-import formatDate from "../utils/formatDate";
+import InputTile from "components/InputTile";
+import 'styles/modal.scss'
+import formatDate from "utils/formatDate";
 
 const Modal = (props) => {
     const deleteTask = (id) => {

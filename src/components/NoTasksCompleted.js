@@ -1,5 +1,5 @@
-import vector from "../assets/images/complete-tasks.png";
-import '../styles/no-tasks-completed.scss'
+import vector from "assets/images/complete-tasks.png";
+import 'styles/no-tasks-completed.scss'
 
 const NoTasksCompleted = () => {
     return ( 

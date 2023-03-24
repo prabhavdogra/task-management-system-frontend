@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
-import LoginImage from "../assets/images/login.webp";
-import InputTile from "../components/InputTile";
-import '../styles/login.scss'
-import Loading from "./Loading";
+import LoginImage from "assets/images/login.webp";
+import InputTile from "components/InputTile";
+import 'styles/login.scss'
+import Loading from "pages/Loading";
 
 const Login = () => {
     const [ApiLog, setApiLog] = useState("");

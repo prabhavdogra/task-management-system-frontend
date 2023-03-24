@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Modal from "../components/Modal";
-import NoTasksCompleted from "../components/NoTasksCompleted";
-import TaskTile from "../components/TaskTile";
-import '../styles/completed.scss'
-import formatDate from "../utils/formatDate";
-import Loading from "./Loading";
+import Header from "components/Header";
+import Modal from "components/Modal";
+import NoTasksCompleted from "components/NoTasksCompleted";
+import TaskTile from "components/TaskTile";
+import "styles/completed.scss"
+import formatDate from "utils/formatDate";
+import Loading from "pages/Loading";
 
 const Completed = (props) => {
     const [isLoading, setIsLoading] = useState(true);

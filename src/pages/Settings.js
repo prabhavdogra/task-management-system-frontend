@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FixedInputTile from "../components/FixedInputTile";
-import Header from "../components/Header";
-import InputTile from "../components/InputTile";
-import '../styles/settings.scss'
-import Loading from "./Loading";
+import FixedInputTile from "components/FixedInputTile";
+import Header from "components/Header";
+import InputTile from "components/InputTile";
+import 'styles/settings.scss'
+import Loading from "pages/Loading";
 
 const Settings = () => {
     const [isLoading, setIsLoading] = useState(false)

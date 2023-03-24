@@ -3,7 +3,7 @@ import Search from 'components/Search'
 import Tasks from 'components/Tasks'
 import Illustration from 'components/Illustration'
 import Header from 'components/Header'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const Home = () => {
     const [ongoingTasks, setOngoingTasks] = useState([])

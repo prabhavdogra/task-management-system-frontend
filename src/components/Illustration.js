@@ -1,7 +1,7 @@
 import 'styles/illustration.scss'
 import vector from "assets/images/vector.png";
 import { useState } from 'react';
-import Modal from './Modal';
+import Modal from 'components/Modal';
 
 const Illustration = (props) => {
     const [modalStatus, setModalStatus] = useState(false)

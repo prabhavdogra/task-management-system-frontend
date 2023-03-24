@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import TaskTile from "./TaskTile";
-import '../utils/formatDate'
-import formatDate from "../utils/formatDate";
-import '../styles/tasks.scss'
-import Modal from "./Modal";
+import TaskTile from "components/TaskTile";
+import 'utils/formatDate'
+import formatDate from "utils/formatDate";
+import 'styles/tasks.scss'
+import Modal from "components/Modal";
 
 const Tasks = (props) => {
     const [isModalUpdating, setIsModalUpdating] = useState(false)
