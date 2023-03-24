@@ -1,8 +1,8 @@
-import '../styles/home.scss'
-import Search from '../components/Search'
-import Tasks from '../components/Tasks'
-import Illustration from '../components/Illustration'
-import Header from '../components/Header'
+import 'styles/home.scss'
+import Search from 'components/Search'
+import Tasks from 'components/Tasks'
+import Illustration from 'components/Illustration'
+import Header from 'components/Header'
 import { useEffect, useState } from 'react'
 
 const Home = () => {
