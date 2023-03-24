@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'styles/header.scss'
 
-const Header = (props) => {
+const Headerr = (props) => {
     useEffect(() => {
         const tabElements = document.getElementsByClassName("header-icon");
         for (let i = 0; i < tabElements.length; i++) {
@@ -47,4 +47,4 @@ const Header = (props) => {
      );
 }
 
-export default Header;
+export default Headerr;
