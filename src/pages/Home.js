@@ -2,7 +2,7 @@ import 'styles/home.scss'
 import Search from 'components/Search'
 import Tasks from 'components/Tasks'
 import Illustration from 'components/Illustration'
-import Header from 'components/Headerr'
+import Header from 'components/HeaderComponent'
 import { useState } from 'react'
 
 const Home = () => {

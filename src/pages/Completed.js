@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "components/Headerr";
+import Header from "components/HeaderComponent";
 import Modal from "components/Modal";
 import NoTasksCompleted from "components/NoTasksCompleted";
 import TaskTile from "components/TaskTile";
