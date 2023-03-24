@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FixedInputTile from "components/FixedInputTile";
-import Header from "components/Header";
+import Header from "components/Headerr";
 import InputTile from "components/InputTile";
 import 'styles/settings.scss'
 import Loading from "pages/Loading";
