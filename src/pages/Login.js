@@ -4,6 +4,7 @@ import LoginImage from "assets/images/login.webp";
 import InputTile from "components/InputTile";
 import 'styles/login.scss'
 import Loading from "pages/Loading";
+import { AUTH_LOGIN_POST } from "urls";
 
 const Login = () => {
     const [ApiLog, setApiLog] = useState("");
@@ -17,7 +18,7 @@ const Login = () => {
             "password" : password
         }
         setIsValidatingCredentials(true);
-        fetch("http://localhost:3000/api/auth/login", {
+        fetch(AUTH_LOGIN_POST, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

@@ -4,6 +4,7 @@ import LoginImage from "assets/images/login.webp";
 import InputTile from "components/InputTile";
 import 'styles/signup.scss'
 import Loading from "pages/Loading";
+import { AUTH_SIGNUP_POST } from "urls";
 
 const Signup = () => {
     const [ApiLog, setApiLog] = useState("");
@@ -39,7 +40,7 @@ const Signup = () => {
             "phone_no" : phoneno
         }
         setIsValidatingCredentials(true);
-        fetch("http://localhost:3000/api/auth/signup", {
+        fetch(AUTH_SIGNUP_POST, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

@@ -2,6 +2,7 @@ import 'styles/illustration.scss'
 import vector from "assets/images/vector.png";
 import { useState } from 'react';
 import Modal from 'components/Modal';
+import { TASK_CREATE_POST, TASK_GET } from 'urls';
 
 const Illustration = (props) => {
     const [modalStatus, setModalStatus] = useState(false)
@@ -26,7 +27,7 @@ const Illustration = (props) => {
         }
         setIsModalUpdating(true);
         console.log(taskDetails)
-        fetch("http://localhost:3000/api/task/create", {
+        fetch(TASK_CREATE_POST, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",
@@ -44,7 +45,7 @@ const Illustration = (props) => {
     }
     const updateTasks = () => {
         const JWTtoken = localStorage.getItem('token')
-        fetch("http://localhost:3000/api/task", {
+        fetch(TASK_GET, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": JWTtoken

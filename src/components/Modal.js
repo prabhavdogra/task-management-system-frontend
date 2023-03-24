@@ -1,11 +1,12 @@
 import InputTile from "components/InputTile";
 import 'styles/modal.scss'
+import { TASK_BY_ID_DELETE } from "urls";
 import formatDate from "utils/formatDate";
 
 const Modal = (props) => {
     const deleteTask = (id) => {
         const JWTtoken = localStorage.getItem('token')
-        fetch('http://localhost:3000/api/task/' + id.toString(), { 
+        fetch(TASK_BY_ID_DELETE(id), { 
             method: 'DELETE',
             headers: {
                 "Content-type": "application/json",

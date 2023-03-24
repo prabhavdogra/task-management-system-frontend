@@ -6,6 +6,7 @@ import TaskTile from "components/TaskTile";
 import "styles/completed.scss"
 import formatDate from "utils/formatDate";
 import Loading from "pages/Loading";
+import { TASK_GET, TASK_UPDATE_POST } from "urls";
 
 const Completed = (props) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,7 @@ const Completed = (props) => {
         setIsLoading(true)
         setCountOfCompletedTasks(0)
         const JWTtoken = localStorage.getItem('token')
-        fetch("http://localhost:3000/api/task", {
+        fetch(TASK_GET, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": JWTtoken
@@ -67,7 +68,7 @@ const Completed = (props) => {
             "progress" : Number(progress),
         }
         setIsModalUpdating(true);
-        fetch("http://localhost:3000/api/task/update", {
+        fetch(TASK_UPDATE_POST, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -86,7 +87,7 @@ const Completed = (props) => {
 
     useEffect(() => {
         const JWTtoken = localStorage.getItem('token')
-        fetch("http://localhost:3000/api/task", {
+        fetch(TASK_GET, {
             headers: {
                 "Accept": "application/json",
                 "Authorization": JWTtoken

@@ -5,6 +5,7 @@ import Header from "components/HeaderComponent";
 import InputTile from "components/InputTile";
 import 'styles/settings.scss'
 import Loading from "pages/Loading";
+import { AUTH_LOGOUT_POST, USER_GET, USER_UPDATE_POST } from "urls";
 
 const Settings = () => {
     const [isLoading, setIsLoading] = useState(false)
@@ -26,7 +27,7 @@ const Settings = () => {
             "email_id": email,
             "phone_no": phone,
         })
-        fetch("http://localhost:3000/api/user/update", {
+        fetch(USER_UPDATE_POST, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",
@@ -44,7 +45,7 @@ const Settings = () => {
     useEffect(() => {
         const JWTtoken = localStorage.getItem('token')
         setIsLoading(true);
-        fetch("http://localhost:3000/api/user/get", {
+        fetch(USER_GET, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": JWTtoken
@@ -64,7 +65,7 @@ const Settings = () => {
 
     const Logout = () => {
         const JWTtoken = localStorage.getItem('token')
-        fetch("http://localhost:3000/api/auth/logout", {
+        fetch(AUTH_LOGOUT_POST, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

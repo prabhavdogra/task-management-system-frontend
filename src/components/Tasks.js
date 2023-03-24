@@ -4,6 +4,7 @@ import 'utils/formatDate'
 import formatDate from "utils/formatDate";
 import 'styles/tasks.scss'
 import Modal from "components/Modal";
+import { TASK_GET, TASK_UPDATE_POST } from "urls";
 
 const Tasks = (props) => {
     const [isModalUpdating, setIsModalUpdating] = useState(false)
@@ -21,7 +22,7 @@ const Tasks = (props) => {
 
     const updateTasks = () => {
         const JWTtoken = localStorage.getItem('token')
-        fetch("http://localhost:3000/api/task", {
+        fetch(TASK_GET, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": JWTtoken
@@ -55,7 +56,7 @@ const Tasks = (props) => {
         }
         setIsModalUpdating(true);
 
-        fetch("http://localhost:3000/api/task/update", {
+        fetch(TASK_UPDATE_POST, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

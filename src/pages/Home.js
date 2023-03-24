@@ -4,13 +4,14 @@ import Tasks from 'components/Tasks'
 import Illustration from 'components/Illustration'
 import Header from 'components/HeaderComponent'
 import { useState } from 'react'
+import { TASK_GET } from 'urls'
 
 const Home = () => {
     const [ongoingTasks, setOngoingTasks] = useState([])
     const filterSearchResults = () => {
         const newSearchString = document.getElementById("search").value;
         const JWTtoken = localStorage.getItem('token')
-        fetch("http://localhost:3000/api/task", {
+        fetch(TASK_GET, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": JWTtoken
