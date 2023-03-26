@@ -36,6 +36,13 @@ const Modal = (props) => {
                 <InputTile fieldData={{label: "Content", value: props.modalData.content, inputDivID: "content"}}></InputTile>
                 <InputTile fieldData={{label: "Progress", value: props.modalData.progress, inputDivID: "progress"}}></InputTile>
                 {
+                    props.modalError
+                    ?
+                    <div className="modal-error">{props.modalError}</div>
+                    :
+                    <></>
+                }
+                {
                     props.isModalUpdating
                     ?
                     <>Updating...</>

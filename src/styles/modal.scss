@@ -43,6 +43,12 @@
     padding-bottom: 1rem;
 }
 
+.modal-error {
+    padding-left: 0.5rem;
+    padding-top: 1rem;
+    color: red;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -70,7 +76,7 @@
     font-size: 1rem;
     background-color: $primaryPurple;
     color: white;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

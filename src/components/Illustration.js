@@ -7,13 +7,15 @@ import { TASK_CREATE_POST, TASK_GET } from 'urls';
 const Illustration = (props) => {
     const [modalStatus, setModalStatus] = useState(false)
     const [isModalUpdating, setIsModalUpdating] = useState(false);
+    const [modalError, setModalError] = useState(null)
     const modalData = {
         id: null,
         date: null,
         heading: "",
         content: "",
-        progress: "",
+        progress: null,
     }
+
     const addTask = () => {
         const heading = document.getElementById("heading").value;
         const content = document.getElementById("content").value;
@@ -26,6 +28,22 @@ const Illustration = (props) => {
             "progress" : Number(progress),
         }
         setIsModalUpdating(true);
+        setModalError(null);
+        if(heading === "") {
+            setIsModalUpdating(false);
+            setModalError("Heading can't be empty")
+            return;
+        }
+        if(content === "") {
+            setIsModalUpdating(false);
+            setModalError("Content can't be empty")
+            return;
+        }
+        if(isNaN(progress) || Number(progress) > 100 || Number(progress) < 0) {
+            setIsModalUpdating(false);
+            setModalError("Progress must be an integer between 1 and 100")
+            return;
+        }
         console.log(taskDetails)
         fetch(TASK_CREATE_POST, {
             method: 'POST',
@@ -43,6 +61,7 @@ const Illustration = (props) => {
             updateTasks()
         })
     }
+
     const updateTasks = () => {
         const JWTtoken = localStorage.getItem('token')
         fetch(TASK_GET, {
@@ -65,8 +84,15 @@ const Illustration = (props) => {
                 }
             })
     }
-    const showModal = () => setModalStatus(true)
-    const hideModal = () => setModalStatus(false)
+
+    const showModal = (props) => {
+        setModalStatus(true)
+    }
+
+    const hideModal = () => {
+        setModalStatus(false)
+        setModalError(null)
+    }
     return ( 
         <div className="illustration">
             <div className="big-container">
@@ -95,6 +121,7 @@ const Illustration = (props) => {
                 onFormSubmit={addTask}
                 isModalUpdating={isModalUpdating}
                 updateNonModal={updateTasks}
+                modalError={modalError}
                 />
                 :
                 <></>

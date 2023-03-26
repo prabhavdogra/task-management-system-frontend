@@ -17,5 +17,5 @@ export const USER_UPDATE_POST = `${USER_HOST}/update`;
 export const TASK_CREATE_POST = `${TASK_HOST}/create`;
 export const TASK_GET = `${TASK_HOST}`;
 export const TASK_BY_ID_DELETE = (id) => `${TASK_HOST}/${id.toString()}`;
-export const TASK_UPDATE_POST = `${HOST}/update`;
+export const TASK_UPDATE_POST = `${TASK_HOST}/update`;
 

@@ -15,6 +15,7 @@ const Completed = (props) => {
     const [modalStatus, setModalStatus] = useState(false)
     const [isModalUpdating, setIsModalUpdating] = useState(false);
     const [modalData, setModalData] = useState(null)
+    const [modalError, setModalError] = useState(null)
     const updateTasks = () => {
         setIsLoading(true)
         setCountOfCompletedTasks(0)
@@ -53,6 +54,7 @@ const Completed = (props) => {
 
     const hideModal = () => {
         setModalStatus(false)
+        setModalError(null)
         setModalData(null)
     }
 
@@ -68,6 +70,22 @@ const Completed = (props) => {
             "progress" : Number(progress),
         }
         setIsModalUpdating(true);
+        setModalError(null);
+        if(heading === "") {
+            setIsModalUpdating(false);
+            setModalError("Heading can't be empty")
+            return;
+        }
+        if(content === "") {
+            setIsModalUpdating(false);
+            setModalError("Content can't be empty")
+            return;
+        }
+        if(isNaN(progress) || Number(progress) > 100 || Number(progress) < 0) {
+            setIsModalUpdating(false);
+            setModalError("Progress must be an integer between 1 and 100")
+            return;
+        }
         fetch(TASK_UPDATE_POST, {
             method: 'POST',
             headers: {
@@ -157,6 +175,7 @@ const Completed = (props) => {
                 onFormSubmit={updateTaskDetails}
                 isModalUpdating={isModalUpdating}
                 updateNonModal={updateTasks}
+                modalError={modalError}
                 />
                 :
                 <></>
